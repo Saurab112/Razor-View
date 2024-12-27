@@ -1,0 +1,45 @@
+﻿@using RazorViews.Models
+
+@{
+    string? appTitle = "Asp.Net Demo App";
+    Person person = new Person()
+            {
+                PersonName = "Saurab Rajbanshi",
+                DateOfBirth = Convert.ToDateTime("2003-09-04"),
+                PersonGender = Gender.Male
+            };
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@appTitle</title>
+</head>
+<body>
+    <h1>Welcome @person.PersonName</h1>
+    @if(person.DateOfBirth.HasValue){
+        double age = Math.Round((DateTime.Now - person.DateOfBirth).Value.TotalDays / 365.25);
+        <h3>You are @age years old</h3>
+        <p>Getting older day by day 💪😁</p>
+    }
+    else{
+        <h3>Date of birth is unknown \n Maybe you are young☺️</h3>
+    }
+
+    @switch (person.PersonGender){
+        case Gender.Male:
+            <p>Hello sir</p>
+            ;
+            break;
+
+        case Gender.Female:
+            <p>Hello ma'am</p>
+            ;
+            break;
+
+    }
+
+    </body>
+</html>
