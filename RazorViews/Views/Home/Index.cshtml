@@ -41,14 +41,9 @@
 
 @{
     string? title = "Asp.Net demo app";
-    List<Person> person = new List<Person>()
-    {
-        new Person() { PersonName = "Saurab Rajbanshi", DateOfBirth = Convert.ToDateTime("2003-09-04"),PersonGender = Gender.Male },
-        new Person(){ PersonName = "Gaurav Rajbanshi", DateOfBirth = Convert.ToDateTime("2006-09-04"),PersonGender = Gender.Male },
-        new Person(){PersonName = "Arav Rajbanshi", DateOfBirth = Convert.ToDateTime("2008-09-04"),PersonGender = Gender.Male}
-    };
     //dynamic html content example (using html.raw concept)
     string dynamicContent = "<strong>Welcome to the Asp.net demo app!</strong><br><em>Enjoy your stay 😊</em>";
+    List<Person>? person = (List<Person>?)ViewData["person"];
 }
 @{
     //method
@@ -83,18 +78,18 @@
                     }
                 </div>
             } *@
-            @for(int i = 0; i <= 2; i++){
-                Person person1 = person[i];
-                <div>
-                    @person1.PersonName
-                    <span>,</span>
-                    <span>@person1.PersonGender</span>
-                    @if(person1.DateOfBirth != null){
-@*                         <span>@person1.DateOfBirth.Value.ToString("MM-dd-yyyy")</span>
+            @foreach(Person person1 in person){
+        <div>
+            @person1.PersonName
+            <span>,</span>
+            <span>@person1.PersonGender</span>
+            @if (person1.DateOfBirth != null)
+            {
+                @*                         <span>@person1.DateOfBirth.Value.ToString("MM-dd-yyyy")</span>
  *@                 <h3>You are @GetAge(person1.DateOfBirth) years old</h3>
                 @Html.Raw("<p>💪 Keep going</p>")  @* Render emoji with raw HTML *@
-                    }
-                </div>
+            }
+        </div>
             }
     </body>
 </html>
