@@ -15,7 +15,10 @@ namespace RazorViews.Controllers
 				new Person(){PersonName = "Arav Rajbanshi", DateOfBirth = Convert.ToDateTime("2008-09-04"),PersonGender = Gender.Male}
 			};
 			//viewdata
-			ViewData["person"] = person;
+			//ViewData["person"] = person;
+
+			//viewbag
+			ViewBag.person = person;
 			return View();
 		}
 	}

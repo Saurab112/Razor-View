@@ -43,7 +43,8 @@
     string? title = "Asp.Net demo app";
     //dynamic html content example (using html.raw concept)
     string dynamicContent = "<strong>Welcome to the Asp.net demo app!</strong><br><em>Enjoy your stay 😊</em>";
-    List<Person>? person = (List<Person>?)ViewData["person"];
+    //Dynamic (no need for casting) if we use viewbag
+    //List<Person>? person = (List<Person>?)ViewData["person"];
 }
 @{
     //method
@@ -78,7 +79,7 @@
                     }
                 </div>
             } *@
-            @foreach(Person person1 in person){
+            @foreach(Person person1 in ViewBag.person){
         <div>
             @person1.PersonName
             <span>,</span>
