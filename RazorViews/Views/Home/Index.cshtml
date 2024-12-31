@@ -1,6 +1,6 @@
 ﻿@using RazorViews.Models
 
-@{
+@* @{
     string? appTitle = "Asp.Net Demo App";
     Person person = new Person()
             {
@@ -9,9 +9,6 @@
                 PersonGender = Gender.Male
             };
 }
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,8 +35,34 @@
             <p>Hello ma'am</p>
             ;
             break;
+    } 
+    </body>
+</html> *@
 
-    }
-
+@{
+    string? title = "Asp.Net demo app";
+    List<Person> person = new List<Person>()
+    {
+        new Person() { PersonName = "Saurab Rajbanshi", DateOfBirth = Convert.ToDateTime("2003-09-04"),PersonGender = Gender.Male },
+        new Person(){ PersonName = "Gaurav Rajbanshi", DateOfBirth = Convert.ToDateTime("2006-09-04"),PersonGender = Gender.Male },
+        new Person(){PersonName = "Arav Rajbanshi", DateOfBirth = Convert.ToDateTime("2008-09-04"),PersonGender = Gender.Male}
+    };
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+        </head>
+    <body>
+         @foreach(var people in person){
+                <div>
+                    @people.PersonName
+                    <span>,</span>
+                    <span>@people.PersonGender</span>
+                    @if(people.DateOfBirth != null){
+                        <span>@people.DateOfBirth.Value.ToString("MM-dd-yyyy")</span>
+                    }
+                </div>
+            }
     </body>
 </html>

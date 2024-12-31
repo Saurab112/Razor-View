@@ -29,3 +29,4 @@ C:\myLearnings\RazorViews\RazorViews\obj\Debug\net8.0\refint\RazorViews.dll
 C:\myLearnings\RazorViews\RazorViews\obj\Debug\net8.0\RazorViews.pdb
 C:\myLearnings\RazorViews\RazorViews\obj\Debug\net8.0\RazorViews.genruntimeconfig.cache
 C:\myLearnings\RazorViews\RazorViews\obj\Debug\net8.0\ref\RazorViews.dll
+C:\myLearnings\RazorViews\RazorViews\obj\Debug\net8.0\RazorViews.sourcelink.json
