@@ -1,0 +1,13 @@
+﻿@using RazorViews.Models;
+@model Person;
+
+
+<!DOCTYPE html>
+<html>
+    <head><title>Person's Details</title></head>
+    <body>
+        <h2>Name: @Model.PersonName</h2>
+        <h2>Gender: @Model.PersonGender</h2>
+        <h2>Date of birth: @Model.DateOfBirth?.ToString("MM/dd/yyyy")</h2>
+    </body>
+</html>

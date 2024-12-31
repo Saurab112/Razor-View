@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\RazorViews",
-    "\\RazorViews\\Models"
+    "\\RazorViews\\Controllers",
+    "\\RazorViews\\Models",
+    "\\RazorViews\\Views",
+    "\\RazorViews\\Views\\Home"
   ],
   "SelectedNode": "\\RazorViews.sln",
   "PreviewInSolutionExplorer": false

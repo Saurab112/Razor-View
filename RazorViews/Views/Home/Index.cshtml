@@ -1,4 +1,6 @@
 ﻿@using RazorViews.Models
+@model IEnumerable<Person> //Collection of person   //Represents a collection (list) of Person objects.
+@* //@model Person:-Represents a single instance of the Person object.
 
 @* @{
     string? appTitle = "Asp.Net Demo App";
@@ -79,7 +81,7 @@
                     }
                 </div>
             } *@
-            @foreach(Person person1 in ViewBag.person){
+            @foreach(Person person1 in Model){
         <div>
             @person1.PersonName
             <span>,</span>
